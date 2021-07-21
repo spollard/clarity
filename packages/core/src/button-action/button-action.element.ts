@@ -32,6 +32,8 @@ import styles from './button-action.element.scss';
  * @cssprop --padding
  * @cssprop --outline
  * @cssprop --outline-offset
+ * @property pressed - boolean
+ * @property expanded - boolean
  */
 export class CdsButtonAction extends CdsBaseButton {
   @property({ type: String }) shape: string;
@@ -50,7 +52,7 @@ export class CdsButtonAction extends CdsBaseButton {
         <slot
           ><cds-icon
             .shape=${this.shape ? this.shape : 'ellipsis-vertical'}
-            ?solid=${this.pressed}
+            ?solid=${this.pressed || this.expanded}
             inner-offset=${1}
           ></cds-icon
         ></slot>
